@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://di5ihh475l1as"]
+
+[ext_resource type="Script" uid="uid://bc0rqfhjaddbo" path="res://Scripts/pause_menu.gd" id="1_idnuk"]
+
+[node name="PauseMenu" type="Control" unique_id=1091266549]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_idnuk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1006620986]
+modulate = Color(0.12941177, 1, 1, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.873728, 16.370787)
+
+[node name="PauseLabel" type="Label" parent="." unique_id=631841183]
+modulate = Color(1, 0.019607844, 1, 1)
+layout_mode = 0
+offset_left = 402.0
+offset_top = 220.0
+offset_right = 721.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 50
+text = "MENU PAUSE"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="." unique_id=166496170]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 320.0
+offset_right = 608.0
+offset_bottom = 351.0
+text = "Continue"
+
+[node name="MenuButton" type="Button" parent="." unique_id=931835760]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 374.0
+offset_right = 624.0
+offset_bottom = 405.0
+text = "Return Menu"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

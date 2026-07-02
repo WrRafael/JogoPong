@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dsf6bm3oqnrqn"]
+
+[ext_resource type="PackedScene" uid="uid://dgisvhq6a20po" path="res://Cenas/raquete.tscn" id="1_675i2"]
+[ext_resource type="Script" uid="uid://clkf6ipbxuqxm" path="res://Scripts/main.gd" id="1_gxdmd"]
+[ext_resource type="PackedScene" uid="uid://bs8lbe4aeuxx4" path="res://Cenas/ball.tscn" id="2_k74ne"]
+[ext_resource type="PackedScene" uid="uid://di5ihh475l1as" path="res://Cenas/pause_menu.tscn" id="3_n6gaj"]
+[ext_resource type="PackedScene" uid="uid://b46fftv7okodq" path="res://Cenas/victory_screen.tscn" id="4_gxdmd"]
+[ext_resource type="Script" uid="uid://bv22vheu3wn2s" path="res://Scripts/left_goal.gd" id="4_uwx1x"]
+[ext_resource type="Script" uid="uid://c81iuh57jco56" path="res://Scripts/right_goal.gd" id="5_ctm5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlcdo"]
+size = Vector2(20, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2nyp"]
+size = Vector2(1179, 20)
+
+[node name="Main" type="Node2D" unique_id=84033961]
+script = ExtResource("1_gxdmd")
+
+[node name="Player1" parent="." unique_id=825898205 instance=ExtResource("1_675i2")]
+position = Vector2(31, 290)
+
+[node name="Player2" parent="." unique_id=97801089 instance=ExtResource("1_675i2")]
+position = Vector2(1115, 289)
+
+[node name="ball" parent="." unique_id=1470690822 instance=ExtResource("2_k74ne")]
+position = Vector2(576, 324)
+
+[node name="LeftGoal" type="Area2D" parent="." unique_id=987695001]
+script = ExtResource("4_uwx1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=74541796]
+position = Vector2(-8, 323)
+shape = SubResource("RectangleShape2D_mlcdo")
+
+[node name="RightGoal" type="Area2D" parent="." unique_id=1750267207]
+script = ExtResource("5_ctm5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=1548963220]
+position = Vector2(1159, 326)
+shape = SubResource("RectangleShape2D_mlcdo")
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=423363317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=1449716779]
+position = Vector2(581, -7)
+shape = SubResource("RectangleShape2D_f2nyp")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=1455845549]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=1714609802]
+position = Vector2(568, 656)
+shape = SubResource("RectangleShape2D_f2nyp")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1035022549]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=539622193]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0 x 0 
+"
+horizontal_alignment = 1
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1351643992]
+
+[node name="PauseMenu" parent="UI" unique_id=1091266549 instance=ExtResource("3_n6gaj")]
+
+[node name="VictoryScreen" parent="UI" unique_id=1812666821 instance=ExtResource("4_gxdmd")]
+
+[connection signal="body_entered" from="LeftGoal" to="LeftGoal" method="_on_body_entered"]
+[connection signal="body_entered" from="RightGoal" to="RightGoal" method="_on_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bjh1e1j2e1hd1"]
+
+[ext_resource type="Script" uid="uid://2ngdp4quyncn" path="res://Scripts/menu.gd" id="1_pveh2"]
+
+[node name="Menu" type="Control" unique_id=1429328973]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pveh2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1955356397]
+modulate = Color(0.03529412, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(29.042683, 16.152193)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1602173234]
+modulate = Color(1, 0.3372549, 1, 1)
+layout_mode = 0
+offset_left = 450.0
+offset_top = 235.0
+offset_right = 752.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 50
+text = "HIPER PONG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SinglePlayerButton" type="Button" parent="." unique_id=1878565741]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 338.0
+offset_right = 650.0
+offset_bottom = 369.0
+text = "Single Player
+"
+
+[node name="TwoPlayersButton" type="Button" parent="." unique_id=1088463599]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 387.0
+offset_right = 652.0
+offset_bottom = 418.0
+text = "Two Players
+"
+
+[connection signal="pressed" from="SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="TwoPlayersButton" to="." method="_on_two_players_button_pressed"]

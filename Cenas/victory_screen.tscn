@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b46fftv7okodq"]
+
+[ext_resource type="Script" uid="uid://biynagpln62t" path="res://Scripts/victory_screen.gd" id="1_oerbt"]
+
+[node name="VictoryScreen" type="Control" unique_id=1812666821]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oerbt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=857546045]
+modulate = Color(0.07058824, 1, 1, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+scale = Vector2(28.74705, 16.226498)
+
+[node name="VictoryLabel" type="Label" parent="." unique_id=1762812044]
+modulate = Color(1, 0.011764706, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 412.0
+offset_top = 198.0
+offset_right = 661.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "VICTORY!!!"
+
+[node name="RestartButton" type="Button" parent="." unique_id=1406133230]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 325.0
+offset_right = 582.0
+offset_bottom = 356.0
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="." unique_id=1504510579]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 377.0
+offset_right = 601.0
+offset_bottom = 408.0
+text = "Return Menu"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

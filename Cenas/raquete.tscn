@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dgisvhq6a20po"]
+
+[ext_resource type="Script" uid="uid://cxx1qr4edch3a" path="res://Scripts/raquete.gd" id="1_h7lds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlcdo"]
+size = Vector2(20, 245)
+
+[node name="Paddle" type="CharacterBody2D" unique_id=825898205]
+script = ExtResource("1_h7lds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664614723]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_mlcdo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1932372550]
+offset_left = -10.0
+offset_top = -121.0
+offset_right = 10.0
+offset_bottom = 124.0
