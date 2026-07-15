@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://bs8lbe4aeuxx4"]
 
 [ext_resource type="Script" uid="uid://u744hqyxjnif" path="res://Scripts/ball.gd" id="1_ah7su"]
+[ext_resource type="Texture2D" uid="uid://b0foxyyvrwvpg" path="res://Artes/testevirus.png" id="2_d3j6p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlcdo"]
 
 [node name="ball" type="CharacterBody2D" unique_id=1470690822]
+position = Vector2(0, 2)
+motion_mode = 1
 script = ExtResource("1_ah7su")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=472159468]
+position = Vector2(2, 1)
+scale = Vector2(2.5317786, 2.572938)
 shape = SubResource("CircleShape2D_mlcdo")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1358372924]
-offset_left = -8.0
-offset_top = -9.0
-offset_right = 8.0
-offset_bottom = 9.0
-color = Color(0, 1, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1786343557]
+position = Vector2(3.000001, 0)
+scale = Vector2(0.23246431, 0.22380649)
+texture = ExtResource("2_d3j6p")

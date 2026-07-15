@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://dgisvhq6a20po"]
 
 [ext_resource type="Script" uid="uid://cxx1qr4edch3a" path="res://Scripts/raquete.gd" id="1_h7lds"]
+[ext_resource type="Texture2D" uid="uid://cfakg62v4gj0q" path="res://Artes/serververdepngpng.png" id="2_jjmlb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pveh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlcdo"]
-size = Vector2(20, 245)
+size = Vector2(17, 87)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=825898205]
 script = ExtResource("1_h7lds")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=178034555]
+material = SubResource("CanvasItemMaterial_pveh2")
+position = Vector2(0, -9)
+rotation = 3.1415927
+scale = Vector2(-0.25652406, -0.20477407)
+texture = ExtResource("2_jjmlb")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664614723]
-position = Vector2(0, 1.5)
+position = Vector2(-0.5, -9.5)
 shape = SubResource("RectangleShape2D_mlcdo")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1932372550]
-offset_left = -10.0
-offset_top = -121.0
-offset_right = 10.0
-offset_bottom = 124.0
+[node name="ShieldTimer" type="Timer" parent="." unique_id=897816528]
+
+[node name="TurboTimer" type="Timer" parent="." unique_id=800677596]
+
+[node name="FreezeTimer" type="Timer" parent="." unique_id=1732285936]
+
+[node name="OverclockTimer" type="Timer" parent="." unique_id=93067560]
